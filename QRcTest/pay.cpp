@@ -55,7 +55,7 @@ void pay::returnFun()
 
 void pay::moneypay()
 {
-   QString cmd = "/home/bc/qtum-0.15.1/bin/qtum-cli -testnet -datadir=/home/pi/.qtum sendtoaddress";
+   QString cmd = "/root/script/qtumpay.sh";
     cmd = cmd + " " + ui->lineEdit->text() + "  " + ui->lineEdit_money->text();
 
    QProcess process;
@@ -96,7 +96,7 @@ void pay::keyPressEvent( QKeyEvent *k )
 bool pay::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == ui->lineEdit_money) {
-        if (event->type() == QEvent::FocusIn) {                                           /* 然后再判断控件的具体事件 (这里指获得焦点事件)   */
+        if (event->type() == QEvent::FocusIn) {     /* 然后再判断控件的具体事件 (这里指获得焦点事件)   */
             ui->lineEdit->clearFocus();//
 
             input = new NumKeyBoard();
@@ -135,6 +135,8 @@ void pay::reshow()
     QString str2 = strQrcode.mid(5); /* cut the head -qtum:-*/
     ui->lineEdit->setText(str2);
 }
+
+
 void pay::showNum()
 {
     ui->lineEdit_money->setText(input->inputNum);
@@ -142,7 +144,6 @@ void pay::showNum()
 
 void pay::scaning()
 {
-
    // ui->lineEdit->setText(str);
 }
 
@@ -153,6 +154,5 @@ void pay::on_pushButton_2Code_clicked()
     qrtest->show();
 
     this->hide();
-
 }
 

@@ -23,7 +23,7 @@ receMoney::receMoney(QWidget *parent) :
     ui->lineEdit->setFocusPolicy(Qt::NoFocus);
     QProcess process;
     // process.start("/apps/qtum/qtum-cli -testnet getnewaddress");
-    process.start("/home/bc/qtum-0.15.1/bin/qtum-cli -testnet -datadir=/home/pi/.qtum getnewaddress");
+    process.start("/root/qtum-0.16.1/bin/qtum-cli -testnet getnewaddress");
     process.waitForStarted();
     process.waitForFinished();
 

@@ -193,8 +193,8 @@ void Widget::keyPressEvent( QKeyEvent *k )
 void Widget::closeQtum()
 {
     QProcess process;
-  //  process.start("/apps/qtum/qtum-cli -testnet stop");
-  //   process.start("/home/bc/qtum-0.15.1/bin/qtum-cli -testnet -datadir=/home/pi/.qtum stop");
+     process.start("/apps/qtum/qtum-cli -testnet stop");
+      process.start("/home/bc/qtum-0.15.1/bin/qtum-cli -testnet -datadir=/home/pi/.qtum stop");
   //  process.waitForStarted();
   //  process.waitForFinished();
 

@@ -71,12 +71,15 @@ static int sCount;
     ui->label->setFont(font);
     ui->label->setText(strQrcode);
 
-    process->start("/root/lab_v4l2_yuyv/camera");
- //   process->waitForStarted();
+    //process->start("/root/script/getpicture.sh");/* error delay too short*/
+    process->start("/root/camera");
     process->waitForFinished();
 
-    process->start("zbarimg  --raw /usr/image_bmp.bmp ");
- //   process->waitForStarted();
+    //process->start("/root/script/qrcode.sh");
+    process->start("zbarimg  -q --raw /usr/image_bmp.bmp");
+
+    //zbarimg  --raw /usr/image_bmp.bmp
+
     process->waitForFinished();
 
     byteArray = process->readAllStandardOutput();

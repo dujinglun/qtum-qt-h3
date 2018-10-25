@@ -84,7 +84,7 @@ void function::balance()
     QByteArray   byteArray;
     QString      str;
 
-    process.start("/home/bc/qtum-0.15.1/bin/qtum-cli -testnet -datadir=/home/pi/.qtum getbalance");
+    process.start("/root/script/qtumgetbalance.sh");
 
     process.waitForStarted();
     process.waitForFinished();

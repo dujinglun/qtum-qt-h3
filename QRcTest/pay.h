@@ -42,6 +42,7 @@ private slots :
    void showNum();
    void scaning();
    void on_pushButton_2Code_clicked();
+
 };
 
 #endif // PAY_H
